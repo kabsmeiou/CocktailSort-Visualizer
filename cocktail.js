@@ -1,4 +1,4 @@
-const size = 20; //array size
+const size = 50; //array size
 const array = [];
 
 //creating the array using random number generator
@@ -15,6 +15,8 @@ function play() {
     animate(swaps);
 }
 
+
+//animation for the swaps
 function animate(swaps) {
     if (swaps.length == 0) {
         return;
@@ -22,9 +24,12 @@ function animate(swaps) {
     const [i, j] = swaps.shift();
     [array[i], array[j]] = [array[j], array[i]];
     display();
+    setTimeout(()=> {
+        animate(swaps);
+    }, 20);
 }
 
-//call the array
+//call the array generator for the first iteration
 randomize();
 
 //displaying the array 
@@ -41,13 +46,13 @@ function display() {
 //cocktail sort algorithm
 function cocktailSort(array) {
     const swaps = [];
-    var swap;
+    var forwardSwap, backwardSwap;
     do {
-        swap = false;
+        forwardSwap = false, backwardSwap = false;
         //forward pass
         for (let index = 0; index < size - 1; index++) {
             if (array[index] > array[index + 1]) {
-                swap = true;
+                forwardSwap = true;
                 swaps.push([index, index + 1]);
                 var temp = array[index];
                 array[index] = array[index + 1];
@@ -57,14 +62,14 @@ function cocktailSort(array) {
         //backward pass
         for (let index = size - 2; index >= 0; index--) {
             if (array[index + 1] < array[index]) {
-                swap = true;
+                backwardSwap = true;
                 swaps.push([index, index + 1]);
                 var temp = array[index];
                 array[index] = array[index + 1];
                 array[index + 1] = temp;
             }
         }
-    } while (swap);
+    } while (forwardSwap || backwardSwap);
     return swaps;
 }
 
