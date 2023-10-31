@@ -1,0 +1,23 @@
+#container {
+    height: 200px;
+    display: flex;
+    align-items: flex-end;
+    margin-top: 310px;
+    margin-left: 100px;
+}
+
+body {
+    display: flex;
+    align-items: left;
+    flex-direction: column;
+}
+
+.bar {
+    width: 25px;
+    background-color: orange;
+    margin: 1px;
+}
+
+.buttons {
+    margin-left: 370px;
+}
