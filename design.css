@@ -1,3 +1,10 @@
+* {
+    margin: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
 #container {
     height: 200px;
     display: flex;
@@ -20,4 +27,46 @@ body {
 
 .buttons {
     margin-left: 370px;
+}
+
+.card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    /* border: 5px solid aqua; */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-top: 98px;
+    /* border: 5px solid brown; */
+}
+
+.card-title {
+    display: flex;
+    color: #242424;
+    font-family: 'Luckiest Guy Regular';
+    font-size: 125px;
+    /* border: 5px solid yellow; */
+}
+
+.card-text {
+    display: flex;
+    color: #242424;
+    font-family: 'Lora Regular';
+    font-size: 24px;
+    /* border: 5px solid red; */
+}
+
+/* May problem sa button dae ko ma fix */
+.btn {
+    display: flex;
+    width: fit-content;  
+    margin-left: 750px;
+    font-size: 100px;
+    font-family: 'Maiden Orange Regular';
+    border: 5px solid green;
 }
