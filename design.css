@@ -1,23 +1,148 @@
+html {
+    height: 100%;
+    background-color: #FFFEE7;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex-wrap: wrap;
+    /* border: 5px solid aqua; */
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    margin-left: 200px;
+    margin-top: 98px;
+    /* border: 5px solid brown; */
+}
+
+.card-title {
+    display: flex;
+    color: #242424;
+    font-family: 'Luckiest Guy Regular';
+    font-size: 125px;
+    /* border: 5px solid yellow; */
+}
+
+.card-text {
+    display: flex;
+    color: #242424;
+    font-family: 'Lora Regular';
+    font-size: 24px;
+    /* border: 5px solid red; */
+}
+
+/* May problem sa button dae ko ma fix */
+.btn {
+    display: flex;
+    width: fit-content;  
+    margin-left: 750px;
+    font-size: 100px;
+    font-family: 'Maiden Orange Regular';
+    border: 5px solid green;
+}
+
+
+/* page 2 */
+
+#section-2 {
+    background-color: #FFFEE7;
+}
+
 #container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
     height: 200px;
     display: flex;
     align-items: flex-end;
-    margin-top: 310px;
-    margin-left: 100px;
+    margin-top: 250px;
 }
 
-body {
-    display: flex;
-    align-items: left;
-    flex-direction: column;
+.head {
+    background-color: #FF9F1C;
+    height: 160px;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    
 }
 
 .bar {
     width: 25px;
-    background-color: orange;
+    background-color: #FF9F1C;
     margin: 1px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
+.bar.glow-effect {
+    animation: glow 2s infinite; /* Apply the glow animation */
+    box-shadow: 0 0 3px #3498db; /* Initial box shadow style */
 }
 
 .buttons {
-    margin-left: 370px;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+}
+
+/* randomize button configs */
+.randomizer {
+    margin: 1px;
+    background-color: #FFFEE7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.randomizer:hover {
+    background-color: #FFBF69;
+}
+
+/* play button configs */
+.animated-button {
+    margin: 1px;
+    background-color: #FFFEE7;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.animated-button:hover {
+    background-color: #FFBF69;
+}
+  
+/* shake animation */
+.shake {
+    animation: shake 0.3s ease infinite;
+}
+  
+/* animation section */
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+    20%, 40%, 60%, 80% { transform: translateX(5px); }
+    0%, 100% { transform: translateY(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateY(-5px); }
+    20%, 40%, 60%, 80% { transform: translateY(5px); }
+}
+
+@keyframes glow {
+    0% {
+      box-shadow: 0 0 5px #3498db; /* Initial box shadow style */
+    }
+    50% {
+      box-shadow: 0 0 10px #3498db, 0 0 6px #3498db; /* Maximum glow effect */
+    }
+    100% {
+      box-shadow: 0 0 5px #3498db; /* Return to the initial box shadow */
+    }
 }
