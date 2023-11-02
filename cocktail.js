@@ -1,9 +1,12 @@
 const array = [];
 let flag = false; //a flag to check if the animation is still ongoing
+
+//slider IDs
 var slider = document.getElementById("sizeTick");
-var output = document.getElementById("arraySize");
-output.innerHTML = slider.value; // Display the default slider value
-size = slider.value; //array size
+var speedSlide = document.getElementById("speedTick");
+
+size = slider.value; //array size that corresponds to the slider
+speed = 258 - speedSlide.value;
 
 //creating the array using random number generator
 function randomize() {
@@ -41,7 +44,7 @@ function animate(moves) {
     display(move);
     setTimeout(()=> {
         animate(moves);
-    }, 8);
+    }, speed);
 }
 
 //call the array generator for the first iteration
@@ -94,12 +97,20 @@ function cocktailSort(array) {
 }
 
 //slider functions
-// Update the current slider value (each time you drag the slider handle)
+//update the current slider value (each time you drag the slider handle)
 slider.oninput = function() {
     if (flag) return;
-    output.innerHTML = this.value;
+    var value = (this.value-this.min)/(this.max-this.min)*100
+    this.style.background = 'linear-gradient(to right, #f99303 0%, #04d620 ' + value + '%, #fff ' + value + '%, #fff 100%)' 
     size = this.value;
     randomize();
+}
+
+speedSlide.oninput = function() {
+    if (flag) return;
+    var value = (this.value-this.min)/(this.max-this.min)*100
+    this.style.background = 'linear-gradient(to right, #f99303 0%, #04d620 ' + value + '%, #fff ' + value + '%, #fff 100%)' 
+    speed = 258 - this.value;
 }
 
 

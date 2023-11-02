@@ -34,8 +34,7 @@
                     <hr>
                     <div class = "buttons">
                         <div class="slidecontainer">
-                            <input type="range" min="10" max="50" value="25" class="slider" id="sizeTick">
-                            <p>Value: <span id="arraySize"></span></p>
+                            <input type="range" min="10" max="50" value="10" class="slider" id="sizeTick">
                         </div>
                         <button class = "randomizer" id = "random" onClick="randomize()">
                                 <img src="https://i.imgur.com/FWBINfs.png" style="
@@ -47,6 +46,9 @@
                             width: 50px;
                             height: 50px;">
                         </button>
+                        <div class="speedSlide">
+                            <input type="range" min="8" max="250" value="8" class="speedSlider" id="speedTick">
+                        </div>
                     </div>
                     <script src = "cocktail.js"></script>
                 </div>
