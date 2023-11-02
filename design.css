@@ -152,9 +152,12 @@ html {
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 25px; /* Set a specific slider handle width */
-    height: 25px; /* Slider handle height */
-    background: #04AA6D; /* Green background */
+    width: 30px; /* Set a specific slider handle width */
+    height: 55px; /* Slider handle height */
+    background: url('cocktail.png'); /* Green background */
+    background-size: cover;
+    background-repeat: no-repeat;
+    transform: rotate(12deg);
     cursor: pointer; /* Cursor on hover */
 }
   
