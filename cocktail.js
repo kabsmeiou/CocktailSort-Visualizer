@@ -1,6 +1,10 @@
-const size = 30; //array size
 const array = [];
 let flag = false; //a flag to check if the animation is still ongoing
+var slider = document.getElementById("sizeTick");
+var output = document.getElementById("arraySize");
+output.innerHTML = slider.value; // Display the default slider value
+size = slider.value; //array size
+
 //creating the array using random number generator
 function randomize() {
     if (flag) return;   //if its still animating, then dont generate another array
@@ -10,6 +14,7 @@ function randomize() {
     display();
 }
 
+//playing the animation / sorting the array
 function play() {
     if (flag) return; 
     const copy = [...array];
@@ -86,6 +91,15 @@ function cocktailSort(array) {
         }
     } while (forwardSwap || backwardSwap);
     return moves;
+}
+
+//slider functions
+// Update the current slider value (each time you drag the slider handle)
+slider.oninput = function() {
+    if (flag) return;
+    output.innerHTML = this.value;
+    size = this.value;
+    randomize();
 }
 
 

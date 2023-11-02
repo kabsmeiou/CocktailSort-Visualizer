@@ -1,12 +1,13 @@
-html {
-    height: 100%;
+/*html {
     background-color: #FFFEE7;
-}
-
+    background-image: url(https://i.imgur.com/jgUtAtI.png);
+    background-repeat: no-repeat;
+    scroll-behavior: smooth;
+    background-size: cover;
+}*/
 html {
     scroll-behavior: smooth;
 }
-
 .card-img-overlay {
     display: flex;
     flex-direction: column;
@@ -56,6 +57,12 @@ html {
     background-color: #FFFEE7;
 }
 
+.container {
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    background-color: #FFFEE7;
+}
+
 #container {
     display: flex;
     justify-content: center; /* Center horizontally */
@@ -63,14 +70,7 @@ html {
     height: 200px;
     display: flex;
     align-items: flex-end;
-    margin-top: 250px;
-}
-
-.head {
-    background-color: #FF9F1C;
-    height: 160px;
-    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-    
+    margin-top: 350px;
 }
 
 .bar {
@@ -82,7 +82,7 @@ html {
 
 .bar.glow-effect {
     animation: glow 2s infinite; /* Apply the glow animation */
-    box-shadow: 0 0 3px #3498db; /* Initial box shadow style */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
 }
 
 .buttons {
@@ -123,6 +123,46 @@ html {
 /* shake animation */
 .shake {
     animation: shake 0.3s ease infinite;
+}
+
+/* slider configs */
+.slidecontainer {
+    width: 10%; /* Width of the outside container */
+}
+  
+  /* The slider itself */
+.slider {
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 15px; /* Specified height */
+    background: #d3d3d3; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+}
+  
+/* Mouse-over effects */
+.slider:hover {
+    opacity: 1; /* Fully shown on mouse-over */
+}
+  
+/* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
+}
+  
+.slider::-moz-range-thumb {
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #04AA6D; /* Green background */
+    cursor: pointer; /* Cursor on hover */
 }
   
 /* animation section */
