@@ -136,7 +136,7 @@ html {
 
 /* slider configs */
 .slidecontainer, .speedSlide {
-    width: 10%; /* Width of the outside container */
+    min-width: 10%; /* Width of the outside container */
 }
   
   /* body of the slider */
