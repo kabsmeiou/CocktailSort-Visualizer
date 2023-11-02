@@ -27,6 +27,8 @@ html {
     display: flex;
     color: #242424;
     font-family: 'Luckiest Guy Regular';
+    text-shadow: 2px 2px #C17400;
+    text-shadow: 8px 8px #F59300;
     font-size: 1000%;
 }
 
