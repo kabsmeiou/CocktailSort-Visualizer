@@ -175,7 +175,7 @@ html {
     -webkit-appearance: none; /* Override default look */
     width: 30px; /* Set a specific slider handle width */
     height: 55px; /* Slider handle height */
-    background: url('https://i.imgur.com/6valLYZ.png') no-repeat;
+    background: url('imgs/drink.png') no-repeat;
     background-size: cover;
     background-position: center;
     cursor: pointer; /* Cursor on hover */
