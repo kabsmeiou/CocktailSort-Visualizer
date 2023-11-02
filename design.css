@@ -27,7 +27,7 @@ html {
     display: flex;
     color: #242424;
     font-family: 'Luckiest Guy Regular';
-    font-size: 125px;
+    font-size: 1000%;
 }
 
 .card-text {
@@ -38,14 +38,26 @@ html {
 }
 
 /* May problem sa button dae ko ma fix */
-.btn {
-    display: flex;
-    width: fit-content;  
-    margin-left: 750px;
-    font-size: 100px;
-    font-family: 'Maiden Orange Regular';
+.button {
+    margin-left: 700px;
 }
 
+.btn:hover {
+    color: #FFFEE7;
+}
+
+.btn {
+    display: flex;
+    font-family: 'Maiden Orange Regular';
+    color: #994A00;
+    transition-duration: 0.4s;
+    padding-left: 100%;
+    border-radius: 50%;
+}
+
+.arrow {
+    height: 37px;
+}
 
 /* page 2 */
 
