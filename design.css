@@ -41,7 +41,8 @@ html {
 
 /* May problem sa button dae ko ma fix */
 .button {
-    margin-left: 700px;
+    text-align: right;
+    margin-right: 200px;
 }
 
 .btn:hover {
