@@ -26,8 +26,11 @@ function play() {
 }
 
 //animation for the moves
+var highlight = true;
 function animate(moves) {
     flag = true;
+    highlight = true;
+    if (moves.length == 1) highlight = false;
     if (moves.length == 0) {
         const element = document.querySelectorAll('.bar');
         element.forEach(bar => {
@@ -57,7 +60,7 @@ function display(move) {
         const bar = document.createElement("div");
         bar.style.height = array[elem] * 10 + "%";
         bar.classList.add("bar");
-        if (move && move.indices.includes(elem)) {
+        if (move && move.indices.includes(elem) && highlight) {
             bar.style.background = move.type == 'swap' ? "red" : "blue";
         }
         container.appendChild(bar);
@@ -67,32 +70,36 @@ function display(move) {
 //cocktail sort algorithm
 function cocktailSort(array) {
     const moves = [];
-    var forwardSwap, backwardSwap;
-    do {
-        forwardSwap = false, backwardSwap = false;
+    var swapped = true;
+    while (swapped) {
+        swapped = false;
+        let start = 0, end = size - 1;
         //forward pass
-        for (let index = 0; index < size - 1; index++) {
+        for (let index = start; index < end; index++) {
             moves.push({indices: [index, index + 1], type: "compare"});
             if (array[index] > array[index + 1]) {
-                forwardSwap = true;
+                swapped = true;
                 moves.push({indices: [index, index + 1], type: "swap"});
                 var temp = array[index];
                 array[index] = array[index + 1];
                 array[index + 1] = temp;
             }
         }
+        if (!swapped) break;
+        swapped = false;
+        end--;
         //backward pass
-        for (let index = size - 2; index >= 0; index--) {
+        for (let index = end; index >= start; index--) {
             moves.push({indices: [index, index + 1], type: "compare"});
             if (array[index + 1] < array[index]) {
-                backwardSwap = true;
+                swapped = true;
                 moves.push({indices: [index, index + 1], type: "swap"});
                 var temp = array[index];
                 array[index] = array[index + 1];
                 array[index + 1] = temp;
             }
         }
-    } while (forwardSwap || backwardSwap);
+    }
     return moves;
 }
 
@@ -108,7 +115,7 @@ slider.oninput = function() {
 
 speedSlide.oninput = function() {
     if (flag) return;
-    var value = (this.value-this.min)/(this.max-this.min)*100
+    var value = (this.value - this.min)/(this.max - this.min) * 100
     this.style.background = 'linear-gradient(to right, #f99303 0%, #04d620 ' + value + '%, #fff ' + value + '%, #fff 100%)' 
     speed = 258 - this.value;
 }
